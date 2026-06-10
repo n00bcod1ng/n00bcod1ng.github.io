@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emmanuel Prada-Florez — IT Support / Cybersecurity</title>
+<meta name="description" content="Portfolio of Emmanuel Prada-Florez — IT Support and Cybersecurity professional in Milton, ON. Networking & IT Security graduate, Blue Team Level 1 certified.">
+<style>
+:root{
+  --bg:#0b0f14;
+  --bg-alt:#101720;
+  --card:#141d28;
+  --border:#1f2c3a;
+  --text:#d7e0ea;
+  --muted:#8696a7;
+  --accent:#36c2b4;
+  --accent-dim:rgba(54,194,180,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:920px;margin:0 auto;padding:0 24px}
+
+nav{position:sticky;top:0;background:rgba(11,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav .brand{font-weight:700;color:var(--text);font-size:.95rem;letter-spacing:.04em}
+nav .brand span{color:var(--accent)}
+nav ul{display:flex;gap:20px;list-style:none}
+nav ul a{color:var(--muted);font-size:.85rem}
+nav ul a:hover{color:var(--accent);text-decoration:none}
+@media(max-width:640px){nav ul{display:none}}
+
+header{padding:96px 0 72px;background:
+  radial-gradient(ellipse 60% 50% at 70% 20%,var(--accent-dim),transparent),
+  var(--bg)}
+.kicker{color:var(--accent);font-family:ui-monospace,Consolas,monospace;font-size:.85rem;margin-bottom:14px}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:10px}
+.subtitle{font-size:1.2rem;color:var(--muted);margin-bottom:6px}
+.location{color:var(--muted);font-size:.95rem;margin-bottom:26px}
+.hero-links{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-size:.9rem;transition:background .15s}
+.btn:hover{background:var(--accent-dim);text-decoration:none}
+.btn.primary{background:var(--accent);color:#06211e;font-weight:600}
+.btn.primary:hover{filter:brightness(1.1)}
+
+section{padding:64px 0;border-top:1px solid var(--border)}
+section:nth-of-type(even){background:var(--bg-alt)}
+h2{font-size:1.5rem;margin-bottom:28px}
+h2::before{content:"// ";color:var(--accent);font-family:ui-monospace,Consolas,monospace}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:18px}
+.card h3{font-size:1.08rem;margin-bottom:2px}
+.meta{color:var(--muted);font-size:.88rem;margin-bottom:12px}
+.card ul{padding-left:20px;color:var(--text)}
+.card li{margin-bottom:8px;font-size:.95rem}
+.card .writeup{display:inline-block;margin-top:10px;font-size:.88rem;font-family:ui-monospace,Consolas,monospace}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{background:var(--accent-dim);color:var(--accent);border-radius:4px;padding:3px 10px;font-size:.78rem;font-family:ui-monospace,Consolas,monospace}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.skills-grid .card{margin-bottom:0}
+
+footer{padding:40px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="brand">EPF<span>_</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="container">
+    <p class="kicker">$ whoami</p>
+    <h1>Emmanuel Prada-Florez</h1>
+    <p class="subtitle">IT Support / Cybersecurity</p>
+    <p class="location">📍 Milton, ON, Canada</p>
+    <div class="hero-links">
+      <a class="btn primary" href="resume.pdf" download>Download Resume</a>
+      <a class="btn" href="https://www.linkedin.com/in/emmanuel-prada-florez/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/n00bcod1ng" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="mailto:emmanuelprada@hotmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2>About</h2>
+    <p>I'm an IT support and cybersecurity professional based in Milton, Ontario, with a Bachelor of Information Technology (Honours) in Networking and IT Security from Ontario Tech University. I've spent the last several years providing hands-on Tier 1–2 technical support across Windows and Linux environments, conducting security assessments, and building enterprise-grade labs — from Active Directory domains to multi-zone pfSense networks. I'm Blue Team Level 1 (BTL1) certified and passionate about defensive security, clear documentation, and helping people solve technical problems.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>IT Support Volunteer</h3>
+      <p class="meta">NetSoc (Networking &amp; IT Society), Ontario Tech · Nov 2021 – Jan 2026</p>
+      <ul>
+        <li>Provided Tier 1–2 technical support for networking and cybersecurity labs, diagnosing and resolving 100+ hardware, software, connectivity, and configuration issues across Windows and Linux environments for students and peers.</li>
+        <li>Troubleshot account access, virtual machine, and network configuration issues (TCP/IP, DNS, VPN connectivity), documenting recurring problems and fixes to speed up future resolutions.</li>
+        <li>Onboarded and coached new members on lab infrastructure, account setup, and core troubleshooting workflows.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Penetration Testing Intern</h3>
+      <p class="meta">Riipen · Sep 2024 – Dec 2024</p>
+      <ul>
+        <li>Conducted security assessments across 5 domains using Burp Suite, OWASP ZAP, and Nmap, delivering a structured, client-facing report with OWASP Top 10–aligned remediation steps.</li>
+        <li>Identified and documented a critical session-security vulnerability, communicating findings clearly enough to prompt immediate confirmation and scheduled remediation by the client's engineering team.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Customer Service Representative</h3>
+      <p class="meta">Sobeys · Nov 2022 – Present</p>
+      <ul>
+        <li>Resolved complex customer inquiries and de-escalated conflicts daily, providing first-line troubleshooting of point-of-sale (POS) issues in a fast-paced retail environment.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2>Technical Projects</h2>
+
+    <div class="card">
+      <h3>Self-Hosted IT Service Desk Lab</h3>
+      <ul>
+        <li>Deployed a containerized Peppermint ticketing system with Docker on a hardened Ubuntu cloud server (Linode), simulating end-to-end ticket intake, triage, and resolution workflows; published full build documentation.</li>
+      </ul>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">Ubuntu</span><span class="tag">Linode</span><span class="tag">Peppermint</span></div>
+      <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">→ Read the full writeup</a>
+    </div>
+
+    <div class="card">
+      <h3>Enterprise Systems Administration (Active Directory &amp; Windows Server)</h3>
+      <ul>
+        <li>Administered an AD DS and Windows Server environment across a multi-site network: created user accounts, Organizational Units (OUs), and role-based security groups, and managed password resets, password complexity, and account lockout policies via GPO.</li>
+        <li>Configured DNS, DHCP, and a Distributed File System (DFS) for resilient file access and reliable name resolution across the network.</li>
+      </ul>
+      <div class="tags"><span class="tag">Active Directory</span><span class="tag">Windows Server</span><span class="tag">GPO</span><span class="tag">DNS/DHCP/DFS</span></div>
+      <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">→ Read the full writeup</a>
+    </div>
+
+    <div class="card">
+      <h3>Enterprise Network Security (pfSense)</h3>
+      <ul>
+        <li>Designed a multi-zone network (LAN, DMZ, WAN) on pfSense with OpenVPN remote access (split tunneling, internal PKI), HAProxy load balancing, and Ubuntu web servers hardened with custom iptables rules.</li>
+      </ul>
+      <div class="tags"><span class="tag">pfSense</span><span class="tag">OpenVPN</span><span class="tag">HAProxy</span><span class="tag">iptables</span></div>
+      <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">→ Read the full writeup</a>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="container">
+    <h2>Certifications</h2>
+    <div class="card">
+      <h3>Blue Team Level 1 (BTL1)</h3>
+      <p class="meta">Security Blue Team · September 2025</p>
+      <p>Hands-on defensive security certification covering security fundamentals, phishing analysis, threat intelligence, digital forensics, SIEM, and incident response.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Bachelor of Information Technology (Honours) — Networking and IT Security</h3>
+      <p class="meta">Ontario Tech University · January 2026</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Support &amp; Ticketing</h3>
+        <div class="tags"><span class="tag">Tier 1/2 Troubleshooting</span><span class="tag">Ticketing (Peppermint)</span><span class="tag">Incident Documentation</span><span class="tag">Knowledge-Base Writing</span><span class="tag">User Onboarding/Offboarding</span></div>
+      </div>
+      <div class="card">
+        <h3>Systems</h3>
+        <div class="tags"><span class="tag">Windows 10/11</span><span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">Group Policy (GPO)</span><span class="tag">Microsoft 365</span><span class="tag">Linux (CLI)</span><span class="tag">VMware</span><span class="tag">Event Viewer</span><span class="tag">Sysinternals</span></div>
+      </div>
+      <div class="card">
+        <h3>Networking</h3>
+        <div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">DHCP</span><span class="tag">VPN Setup &amp; Troubleshooting</span><span class="tag">Wireshark</span></div>
+      </div>
+      <div class="card">
+        <h3>Scripting &amp; Remote Tools</h3>
+        <div class="tags"><span class="tag">PowerShell</span><span class="tag">Bash</span><span class="tag">Remote Desktop (RDP)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Emmanuel Prada-Florez · Milton, ON · <a href="mailto:emmanuelprada@hotmail.com">emmanuelprada@hotmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
