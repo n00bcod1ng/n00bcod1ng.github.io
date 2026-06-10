@@ -5,222 +5,455 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emmanuel Prada-Florez — IT Support / Cybersecurity</title>
 <meta name="description" content="Portfolio of Emmanuel Prada-Florez — IT Support and Cybersecurity professional in Milton, ON. Networking & IT Security graduate, Blue Team Level 1 certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0f14;
-  --bg-alt:#101720;
-  --card:#141d28;
-  --border:#1f2c3a;
-  --text:#d7e0ea;
-  --muted:#8696a7;
-  --accent:#36c2b4;
-  --accent-dim:rgba(54,194,180,.12);
+  --bg:#0a1626;
+  --text:#94a7bd;
+  --heading:#e6f1ff;
+  --accent:#5eead4;
+  --accent-tint:rgba(94,234,212,.1);
+  --card-hover:rgba(148,167,189,.08);
+  --border-hover:rgba(148,167,189,.14);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:920px;margin:0 auto;padding:0 24px}
+::selection{background:var(--accent);color:#0a1626}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none}
+.mono{font-family:ui-monospace,"SF Mono",Consolas,monospace}
 
-nav{position:sticky;top:0;background:rgba(11,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
-nav .container{display:flex;align-items:center;justify-content:space-between;height:56px}
-nav .brand{font-weight:700;color:var(--text);font-size:.95rem;letter-spacing:.04em}
-nav .brand span{color:var(--accent)}
-nav ul{display:flex;gap:20px;list-style:none}
-nav ul a{color:var(--muted);font-size:.85rem}
-nav ul a:hover{color:var(--accent);text-decoration:none}
-@media(max-width:640px){nav ul{display:none}}
+.layout{
+  max-width:1240px;
+  margin:0 auto;
+  padding:0 48px;
+  display:flex;
+  gap:32px;
+}
 
-header{padding:96px 0 72px;background:
-  radial-gradient(ellipse 60% 50% at 70% 20%,var(--accent-dim),transparent),
-  var(--bg)}
-.kicker{color:var(--accent);font-family:ui-monospace,Consolas,monospace;font-size:.85rem;margin-bottom:14px}
-h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:10px}
-.subtitle{font-size:1.2rem;color:var(--muted);margin-bottom:6px}
-.location{color:var(--muted);font-size:.95rem;margin-bottom:26px}
-.hero-links{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:10px 18px;border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-size:.9rem;transition:background .15s}
-.btn:hover{background:var(--accent-dim);text-decoration:none}
-.btn.primary{background:var(--accent);color:#06211e;font-weight:600}
-.btn.primary:hover{filter:brightness(1.1)}
+/* ===== Left sidebar ===== */
+.sidebar{
+  width:46%;
+  max-height:100vh;
+  position:sticky;
+  top:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:96px 48px 96px 0;
+}
+.sidebar h1{
+  color:var(--heading);
+  font-size:clamp(2.4rem,4.5vw,3.3rem);
+  font-weight:800;
+  letter-spacing:-.03em;
+  line-height:1.05;
+}
+.sidebar h1 a:hover{color:var(--accent)}
+.sidebar .role{
+  color:var(--heading);
+  font-size:1.25rem;
+  font-weight:600;
+  margin-top:14px;
+}
+.sidebar .tagline{
+  margin-top:14px;
+  max-width:330px;
+}
+.sidebar .loc{
+  margin-top:8px;
+  font-size:.85rem;
+  letter-spacing:.06em;
+}
+.sidebar .loc span{color:var(--accent)}
 
-section{padding:64px 0;border-top:1px solid var(--border)}
-section:nth-of-type(even){background:var(--bg-alt)}
-h2{font-size:1.5rem;margin-bottom:28px}
-h2::before{content:"// ";color:var(--accent);font-family:ui-monospace,Consolas,monospace}
+nav.side-nav{margin-top:56px}
+nav.side-nav ul{list-style:none}
+nav.side-nav li{margin-bottom:4px}
+nav.side-nav a{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  padding:8px 0;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--text);
+}
+nav.side-nav a::before{
+  content:"";
+  width:32px;
+  height:1px;
+  background:var(--text);
+  transition:width .25s ease,background .25s ease;
+}
+nav.side-nav a:hover,nav.side-nav a.active{color:var(--heading)}
+nav.side-nav a:hover::before,nav.side-nav a.active::before{width:64px;background:var(--heading)}
 
-.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:18px}
-.card h3{font-size:1.08rem;margin-bottom:2px}
-.meta{color:var(--muted);font-size:.88rem;margin-bottom:12px}
-.card ul{padding-left:20px;color:var(--text)}
-.card li{margin-bottom:8px;font-size:.95rem}
-.card .writeup{display:inline-block;margin-top:10px;font-size:.88rem;font-family:ui-monospace,Consolas,monospace}
+.sidebar .bottom{margin-top:56px;display:flex;flex-direction:column;gap:24px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-block;
+  padding:11px 22px;
+  border:1px solid var(--accent);
+  border-radius:6px;
+  color:var(--accent);
+  font-size:.85rem;
+  font-weight:600;
+  transition:background .2s;
+}
+.btn:hover{background:var(--accent-tint)}
+.socials{display:flex;gap:20px;align-items:center}
+.socials a{color:var(--text);transition:color .2s,transform .2s;display:inline-flex}
+.socials a:hover{color:var(--accent);transform:translateY(-2px)}
+.socials svg{width:22px;height:22px;fill:currentColor}
 
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.tag{background:var(--accent-dim);color:var(--accent);border-radius:4px;padding:3px 10px;font-size:.78rem;font-family:ui-monospace,Consolas,monospace}
+/* ===== Right content ===== */
+.content{width:54%;padding:96px 0}
+section{margin-bottom:96px}
+section:last-of-type{margin-bottom:48px}
+h2{
+  color:var(--heading);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:32px;
+}
+/* mobile sticky section headers */
+@media(max-width:860px){
+  h2{
+    position:sticky;top:0;z-index:5;
+    backdrop-filter:blur(10px);
+    background:rgba(10,22,38,.8);
+    padding:14px 24px;
+    margin:0 -24px 20px;
+  }
+}
 
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.skills-grid .card{margin-bottom:0}
+.about p{max-width:62ch;margin-bottom:16px}
+.about strong{color:var(--heading);font-weight:600}
+.about a{color:var(--accent)}
+.about a:hover{text-decoration:underline}
 
-footer{padding:40px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;text-align:center}
+/* entry rows: date gutter + body (Brittany Chiang pattern) */
+.entry{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:8px 24px;
+  padding:20px;
+  margin:0 -20px 8px;
+  border-radius:8px;
+  border:1px solid transparent;
+  transition:background .2s,border-color .2s;
+}
+.entry:hover{background:var(--card-hover);border-color:var(--border-hover)}
+.entry .when{
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding-top:5px;
+  color:#7287a0;
+}
+.entry h3{
+  color:var(--heading);
+  font-size:1.02rem;
+  font-weight:600;
+  line-height:1.35;
+}
+.entry h3 a{transition:color .2s}
+.entry:hover h3 a,.entry:hover h3{color:var(--accent)}
+.entry .org{color:#7287a0;font-size:.92rem;margin-top:2px}
+.entry ul{list-style:none;margin-top:10px}
+.entry li{
+  position:relative;
+  padding-left:18px;
+  margin-bottom:8px;
+  font-size:.94rem;
+}
+.entry li::before{
+  content:"▹";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;list-style:none}
+.tags li{
+  background:var(--accent-tint);
+  color:var(--accent);
+  border-radius:999px;
+  padding:4px 13px;
+  font-size:.74rem;
+  font-weight:500;
+  margin:0;
+}
+.tags li::before{content:none}
+.writeup{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:14px;
+  font-size:.86rem;
+  font-weight:600;
+  color:var(--heading);
+}
+.writeup .arrow{transition:transform .2s;color:var(--accent)}
+.writeup:hover{color:var(--accent)}
+.writeup:hover .arrow{transform:translate(3px,-3px)}
+
+/* skills */
+.skill-group{margin-bottom:28px}
+.skill-group h3{
+  color:var(--heading);
+  font-size:.95rem;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.skill-group .tags{margin-top:0}
+
+footer{
+  padding:0 0 80px;
+  font-size:.84rem;
+  color:#7287a0;
+  max-width:54ch;
+}
+footer a{color:var(--accent)}
+footer a:hover{text-decoration:underline}
+
+/* ===== Responsive ===== */
+@media(max-width:860px){
+  .layout{flex-direction:column;padding:0 24px;gap:0}
+  .sidebar{
+    width:100%;
+    position:static;
+    max-height:none;
+    padding:64px 0 0;
+  }
+  nav.side-nav{display:none}
+  .sidebar .bottom{margin-top:32px}
+  .content{width:100%;padding:64px 0}
+  section{margin-bottom:64px}
+  .entry{grid-template-columns:1fr;margin:0 0 8px;padding:16px}
+  .entry .when{padding-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <div class="brand">EPF<span>_</span></div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="layout">
 
-<header>
-  <div class="container">
-    <p class="kicker">$ whoami</p>
-    <h1>Emmanuel Prada-Florez</h1>
-    <p class="subtitle">IT Support / Cybersecurity</p>
-    <p class="location">📍 Milton, ON, Canada</p>
-    <div class="hero-links">
-      <a class="btn primary" href="resume.pdf" download>Download Resume</a>
-      <a class="btn" href="https://www.linkedin.com/in/emmanuel-prada-florez/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/n00bcod1ng" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="mailto:emmanuelprada@hotmail.com">Email</a>
-    </div>
-  </div>
-</header>
+  <aside class="sidebar">
+    <div>
+      <h1><a href="#top">Emmanuel<br>Prada-Florez</a></h1>
+      <p class="role">IT Support / Cybersecurity</p>
+      <p class="tagline">I keep systems running, networks secure, and people unblocked — from the help desk to the firewall.</p>
+      <p class="loc mono"><span>⌖</span> MILTON, ON, CANADA</p>
 
-<section id="about">
-  <div class="container">
-    <h2>About</h2>
-    <p>I'm an IT support and cybersecurity professional based in Milton, Ontario, with a Bachelor of Information Technology (Honours) in Networking and IT Security from Ontario Tech University. I've spent the last several years providing hands-on Tier 1–2 technical support across Windows and Linux environments, conducting security assessments, and building enterprise-grade labs — from Active Directory domains to multi-zone pfSense networks. I'm Blue Team Level 1 (BTL1) certified and passionate about defensive security, clear documentation, and helping people solve technical problems.</p>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <h2>Experience</h2>
-
-    <div class="card">
-      <h3>IT Support Volunteer</h3>
-      <p class="meta">NetSoc (Networking &amp; IT Society), Ontario Tech · Nov 2021 – Jan 2026</p>
-      <ul>
-        <li>Provided Tier 1–2 technical support for networking and cybersecurity labs, diagnosing and resolving 100+ hardware, software, connectivity, and configuration issues across Windows and Linux environments for students and peers.</li>
-        <li>Troubleshot account access, virtual machine, and network configuration issues (TCP/IP, DNS, VPN connectivity), documenting recurring problems and fixes to speed up future resolutions.</li>
-        <li>Onboarded and coached new members on lab infrastructure, account setup, and core troubleshooting workflows.</li>
-      </ul>
+      <nav class="side-nav" aria-label="Section navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+        </ul>
+      </nav>
     </div>
 
-    <div class="card">
-      <h3>Penetration Testing Intern</h3>
-      <p class="meta">Riipen · Sep 2024 – Dec 2024</p>
-      <ul>
-        <li>Conducted security assessments across 5 domains using Burp Suite, OWASP ZAP, and Nmap, delivering a structured, client-facing report with OWASP Top 10–aligned remediation steps.</li>
-        <li>Identified and documented a critical session-security vulnerability, communicating findings clearly enough to prompt immediate confirmation and scheduled remediation by the client's engineering team.</li>
-      </ul>
+    <div class="bottom">
+      <div class="actions">
+        <a class="btn" href="resume.pdf" download>Download Résumé</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/n00bcod1ng" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/emmanuel-prada-florez/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:emmanuelprada@hotmail.com" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12.713L.015 4.5h23.97L12 12.713zM12 15.287L0 7.075V19.5h24V7.075l-12 8.212z"/></svg>
+        </a>
+      </div>
     </div>
+  </aside>
 
-    <div class="card">
-      <h3>Customer Service Representative</h3>
-      <p class="meta">Sobeys · Nov 2022 – Present</p>
-      <ul>
-        <li>Resolved complex customer inquiries and de-escalated conflicts daily, providing first-line troubleshooting of point-of-sale (POS) issues in a fast-paced retail environment.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  <main class="content" id="top">
 
-<section id="projects">
-  <div class="container">
-    <h2>Technical Projects</h2>
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I'm an IT support and cybersecurity professional based in Milton, Ontario, with a <strong>Bachelor of Information Technology (Honours) in Networking and IT Security</strong> from Ontario Tech University.</p>
+      <p>I've spent the last several years providing hands-on Tier 1–2 technical support across Windows and Linux environments, conducting security assessments, and building enterprise-grade labs — from Active Directory domains to multi-zone pfSense networks. I'm <strong>Blue Team Level 1 (BTL1)</strong> certified and passionate about defensive security, clear documentation, and helping people solve technical problems.</p>
+      <p>You can read full build documentation for my projects on <a href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">GitBook</a>.</p>
+    </section>
 
-    <div class="card">
-      <h3>Self-Hosted IT Service Desk Lab</h3>
-      <ul>
-        <li>Deployed a containerized Peppermint ticketing system with Docker on a hardened Ubuntu cloud server (Linode), simulating end-to-end ticket intake, triage, and resolution workflows; published full build documentation.</li>
-      </ul>
-      <div class="tags"><span class="tag">Docker</span><span class="tag">Ubuntu</span><span class="tag">Linode</span><span class="tag">Peppermint</span></div>
-      <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">→ Read the full writeup</a>
-    </div>
+    <section id="experience">
+      <h2>Experience</h2>
 
-    <div class="card">
-      <h3>Enterprise Systems Administration (Active Directory &amp; Windows Server)</h3>
-      <ul>
-        <li>Administered an AD DS and Windows Server environment across a multi-site network: created user accounts, Organizational Units (OUs), and role-based security groups, and managed password resets, password complexity, and account lockout policies via GPO.</li>
-        <li>Configured DNS, DHCP, and a Distributed File System (DFS) for resilient file access and reliable name resolution across the network.</li>
-      </ul>
-      <div class="tags"><span class="tag">Active Directory</span><span class="tag">Windows Server</span><span class="tag">GPO</span><span class="tag">DNS/DHCP/DFS</span></div>
-      <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">→ Read the full writeup</a>
-    </div>
+      <div class="entry">
+        <div class="when">Nov 2021 — Jan 2026</div>
+        <div>
+          <h3>IT Support Volunteer</h3>
+          <p class="org">NetSoc (Networking &amp; IT Society), Ontario Tech</p>
+          <ul>
+            <li>Provided Tier 1–2 technical support for networking and cybersecurity labs, diagnosing and resolving 100+ hardware, software, connectivity, and configuration issues across Windows and Linux environments for students and peers.</li>
+            <li>Troubleshot account access, virtual machine, and network configuration issues (TCP/IP, DNS, VPN connectivity), documenting recurring problems and fixes to speed up future resolutions.</li>
+            <li>Onboarded and coached new members on lab infrastructure, account setup, and core troubleshooting workflows.</li>
+          </ul>
+          <ul class="tags"><li>Windows</li><li>Linux</li><li>TCP/IP</li><li>DNS</li><li>VPN</li></ul>
+        </div>
+      </div>
 
-    <div class="card">
-      <h3>Enterprise Network Security (pfSense)</h3>
-      <ul>
-        <li>Designed a multi-zone network (LAN, DMZ, WAN) on pfSense with OpenVPN remote access (split tunneling, internal PKI), HAProxy load balancing, and Ubuntu web servers hardened with custom iptables rules.</li>
-      </ul>
-      <div class="tags"><span class="tag">pfSense</span><span class="tag">OpenVPN</span><span class="tag">HAProxy</span><span class="tag">iptables</span></div>
-      <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">→ Read the full writeup</a>
-    </div>
-  </div>
-</section>
+      <div class="entry">
+        <div class="when">Sep — Dec 2024</div>
+        <div>
+          <h3>Penetration Testing Intern</h3>
+          <p class="org">Riipen</p>
+          <ul>
+            <li>Conducted security assessments across 5 domains using Burp Suite, OWASP ZAP, and Nmap, delivering a structured, client-facing report with OWASP Top 10–aligned remediation steps.</li>
+            <li>Identified and documented a critical session-security vulnerability, communicating findings clearly enough to prompt immediate confirmation and scheduled remediation by the client's engineering team.</li>
+          </ul>
+          <ul class="tags"><li>Burp Suite</li><li>OWASP ZAP</li><li>Nmap</li><li>OWASP Top 10</li></ul>
+        </div>
+      </div>
 
-<section id="certifications">
-  <div class="container">
-    <h2>Certifications</h2>
-    <div class="card">
-      <h3>Blue Team Level 1 (BTL1)</h3>
-      <p class="meta">Security Blue Team · September 2025</p>
-      <p>Hands-on defensive security certification covering security fundamentals, phishing analysis, threat intelligence, digital forensics, SIEM, and incident response.</p>
-    </div>
-  </div>
-</section>
+      <div class="entry">
+        <div class="when">Nov 2022 — Present</div>
+        <div>
+          <h3>Customer Service Representative</h3>
+          <p class="org">Sobeys</p>
+          <ul>
+            <li>Resolved complex customer inquiries and de-escalated conflicts daily, providing first-line troubleshooting of point-of-sale (POS) issues in a fast-paced retail environment.</li>
+          </ul>
+          <ul class="tags"><li>POS Troubleshooting</li><li>De-escalation</li></ul>
+        </div>
+      </div>
+    </section>
 
-<section id="education">
-  <div class="container">
-    <h2>Education</h2>
-    <div class="card">
-      <h3>Bachelor of Information Technology (Honours) — Networking and IT Security</h3>
-      <p class="meta">Ontario Tech University · January 2026</p>
-    </div>
-  </div>
-</section>
+    <section id="projects">
+      <h2>Technical Projects</h2>
 
-<section id="skills">
-  <div class="container">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="card">
+      <div class="entry">
+        <div class="when">Lab Build</div>
+        <div>
+          <h3><a href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">Self-Hosted IT Service Desk Lab</a></h3>
+          <ul>
+            <li>Deployed a containerized Peppermint ticketing system with Docker on a hardened Ubuntu cloud server (Linode), simulating end-to-end ticket intake, triage, and resolution workflows; published full build documentation.</li>
+          </ul>
+          <ul class="tags"><li>Docker</li><li>Ubuntu</li><li>Linode</li><li>Peppermint</li></ul>
+          <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">Read the full writeup <span class="arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Lab Build</div>
+        <div>
+          <h3><a href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">Enterprise Systems Administration — Active Directory &amp; Windows Server</a></h3>
+          <ul>
+            <li>Administered an AD DS and Windows Server environment across a multi-site network: created user accounts, Organizational Units (OUs), and role-based security groups, and managed password resets, password complexity, and account lockout policies via GPO.</li>
+            <li>Configured DNS, DHCP, and a Distributed File System (DFS) for resilient file access and reliable name resolution across the network.</li>
+          </ul>
+          <ul class="tags"><li>Active Directory</li><li>Windows Server</li><li>GPO</li><li>DNS</li><li>DHCP</li><li>DFS</li></ul>
+          <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">Read the full writeup <span class="arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Lab Build</div>
+        <div>
+          <h3><a href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">Enterprise Network Security — pfSense</a></h3>
+          <ul>
+            <li>Designed a multi-zone network (LAN, DMZ, WAN) on pfSense with OpenVPN remote access (split tunneling, internal PKI), HAProxy load balancing, and Ubuntu web servers hardened with custom iptables rules.</li>
+          </ul>
+          <ul class="tags"><li>pfSense</li><li>OpenVPN</li><li>HAProxy</li><li>iptables</li><li>PKI</li></ul>
+          <a class="writeup" href="https://ontariotechu.gitbook.io/emmanuels-projects/" target="_blank" rel="noopener">Read the full writeup <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="entry">
+        <div class="when">Sep 2025</div>
+        <div>
+          <h3>Blue Team Level 1 (BTL1)</h3>
+          <p class="org">Security Blue Team</p>
+          <ul>
+            <li>Hands-on defensive security certification covering security fundamentals, phishing analysis, threat intelligence, digital forensics, SIEM, and incident response.</li>
+          </ul>
+          <ul class="tags"><li>SIEM</li><li>Incident Response</li><li>Digital Forensics</li><li>Threat Intel</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="when">Jan 2026</div>
+        <div>
+          <h3>Bachelor of Information Technology (Honours) — Networking and IT Security</h3>
+          <p class="org">Ontario Tech University</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skill-group">
         <h3>Support &amp; Ticketing</h3>
-        <div class="tags"><span class="tag">Tier 1/2 Troubleshooting</span><span class="tag">Ticketing (Peppermint)</span><span class="tag">Incident Documentation</span><span class="tag">Knowledge-Base Writing</span><span class="tag">User Onboarding/Offboarding</span></div>
+        <ul class="tags"><li>Tier 1/2 Troubleshooting</li><li>Ticketing Systems (Peppermint)</li><li>Incident Documentation</li><li>Knowledge-Base Writing</li><li>User Onboarding/Offboarding</li></ul>
       </div>
-      <div class="card">
+      <div class="skill-group">
         <h3>Systems</h3>
-        <div class="tags"><span class="tag">Windows 10/11</span><span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">Group Policy (GPO)</span><span class="tag">Microsoft 365</span><span class="tag">Linux (CLI)</span><span class="tag">VMware</span><span class="tag">Event Viewer</span><span class="tag">Sysinternals</span></div>
+        <ul class="tags"><li>Windows 10/11</li><li>Windows Server</li><li>Active Directory</li><li>Group Policy (GPO)</li><li>Microsoft 365</li><li>Linux (CLI)</li><li>VMware</li><li>Event Viewer</li><li>Sysinternals</li></ul>
       </div>
-      <div class="card">
+      <div class="skill-group">
         <h3>Networking</h3>
-        <div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">DHCP</span><span class="tag">VPN Setup &amp; Troubleshooting</span><span class="tag">Wireshark</span></div>
+        <ul class="tags"><li>TCP/IP</li><li>DNS</li><li>DHCP</li><li>VPN Setup &amp; Troubleshooting</li><li>Wireshark</li></ul>
       </div>
-      <div class="card">
+      <div class="skill-group">
         <h3>Scripting &amp; Remote Tools</h3>
-        <div class="tags"><span class="tag">PowerShell</span><span class="tag">Bash</span><span class="tag">Remote Desktop (RDP)</span></div>
+        <ul class="tags"><li>PowerShell</li><li>Bash</li><li>Remote Desktop (RDP)</li></ul>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer>
-  <div class="container">
-    <p>© 2026 Emmanuel Prada-Florez · Milton, ON · <a href="mailto:emmanuelprada@hotmail.com">emmanuelprada@hotmail.com</a></p>
-  </div>
-</footer>
+    <footer>
+      <p>© 2026 Emmanuel Prada-Florez. Hand-built with plain HTML &amp; CSS — no frameworks. Design inspired by the developer-portfolio community. Reach me at <a href="mailto:emmanuelprada@hotmail.com">emmanuelprada@hotmail.com</a>.</p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+// highlight the sidebar nav link for the section in view
+const links=[...document.querySelectorAll('nav.side-nav a')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.remove('active'));
+      const a=map.get(e.target.id);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+</script>
 
 </body>
 </html>
